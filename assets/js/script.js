@@ -16,6 +16,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+/**
+ * The main game "loop", called when the script is first loaded
+ * and after the user's answer has been processed
+ */
+function runGame() {
+    // Creates two random numbers between 1 and 25
+    number1 = Math.floor(Math.random() * 25) + 1;
+    number2 = Math.floor(Math.random() * 25) + 1;
+
+    // Selects and displays the question
+    document.getElementById('question').innerHTML = number1 + ' x ' + number2;
+    correctAnswer = number1 * number2;
+}
+
+runGame();
+
 function checkAnswer    () {
     // Get the user's answer from the input box
     let userAnswer = document.getElementById('answer').value;

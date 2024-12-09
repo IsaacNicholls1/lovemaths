@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     runGame("addition");
-    runGame("multiply");
-    runGame("subtract");
+    
     
 
 });
@@ -29,15 +28,17 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(gameType) {
 
+    document.getElementById('answer-box').value = "";
+
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
-    } else if (gameType === "multiply") {
+    } else if (gameType === "multiply" ) {
         displayMultiplyQuestion(num1, num2);
-    } else if (gameType === "subtract") {
+    } else if (gameType === "subtract" ) {
         displaySubtractQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
@@ -54,7 +55,7 @@ function runGame(gameType) {
 
 function checkAnswer() {    
     
-        let userAnswer = parseInt(document.getElementById('answer-box').value);
+        let userAnswer = parseInt(document.getElementById("answer-box").value);
         let calculatedAnswer = calculateCorrectAnswer();
         let isCorrect = userAnswer === calculatedAnswer[0];
     
